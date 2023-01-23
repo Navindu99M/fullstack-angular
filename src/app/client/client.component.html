@@ -1,0 +1,40 @@
+<section class=" p-4 d-flex justify-content-center mb-4">
+  <form id="form" class="text-center" style="width: 100%; max-width: 600px">
+    <h2>Client </h2>
+
+    <!-- Name input -->
+    <mdb-form-control class="mb-4">
+      <input mdbInput type="text" id="name" class="form-control" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"  />
+      <label mdbLabel class="form-label" for="name">Name</label>
+    </mdb-form-control>
+    <!-- Email input -->
+    <mdb-form-control class="mb-4">
+      <input mdbInput type="email" id="email" class="form-control"  [(ngModel)]="email" [ngModelOptions]="{standalone: true}" />
+      <label mdbLabel class="form-label" for="email">Email address</label>
+    </mdb-form-control>
+    <!-- Address input -->
+    <mdb-form-control class="mb-4">
+      <input mdbInput type="text" id="addres" class="form-control" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" />
+      <label mdbLabel class="form-label" for="addres">Addrres</label>
+    </mdb-form-control>
+     <!-- phone number input -->
+     <mdb-form-control class="mb-4">
+      <input mdbInput type="text" id="phone" class="form-control"[(ngModel)]="phone" [ngModelOptions]="{standalone: true}"/>
+      <label mdbLabel class="form-label" for="phone">Phone Number</label>
+    </mdb-form-control>
+    <!-- Message input -->
+    <mdb-form-control class="mb-4">
+      <textarea mdbInput class="form-control" id="Appoiment" rows="4"  [(ngModel)]="Appoiment" [ngModelOptions]="{standalone: true}"></textarea>
+      <label mdbLabel class="form-label" for="Appoiment">Appoiment Request </label>
+    </mdb-form-control>
+    <mdb-form-control class="mb-4 "  >
+      <textarea mdbInput class="form-control" id="feedback" rows="4"  [(ngModel)]="feedback" [ngModelOptions]="{standalone: true}"></textarea>
+       <label mdbLabel class="form-label" for="feedback">feedback</label>
+     </mdb-form-control>
+
+    <!-- Submit button -->
+
+  <button type="submit" (click)="getdata()" class="btn btn-primary">Submit</button>
+
+  </form>
+</section>
