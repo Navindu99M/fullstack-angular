@@ -28,6 +28,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HelpSupportComponent } from './shared/components/help-support/help-support.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WebSocketComponent } from './web-socket/web-socket.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ClientComponent,
     AboutComponent,
     ContactComponent,
-    HelpSupportComponent
+    HelpSupportComponent,
+    WebSocketComponent
   ],
   imports: [
     BrowserModule,
