@@ -8,21 +8,30 @@ trigger:
 - master
 
 pool:
-  vmImage: windows-latest
-
+  name: Azure Pipelines
 steps:
 - task: NodeTool@0
+  displayName: 'Use Node 16.x'
   inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
+    versionSpec: 16.x
 
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+- task: Npm@1
+  displayName: 'npm custom'
+  inputs:
+    command: custom
+    workingDir: 'portfolio-project'
+    verbose: false
+    customCommand: 'install gulp -g '
+
+- task: Npm@1
+  displayName: 'npm install Angular'
+  inputs:
+    command: custom
+    workingDir: 'portfolio-project'
+    verbose: false
+    customCommand: 'install -g @angular/cli@14'
 
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
   inputs:
-    TargetPath : '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'dist'
-    publishLocation: 'Container'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
