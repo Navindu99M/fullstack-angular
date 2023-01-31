@@ -1,3 +1,4 @@
+//let function = require("./functions");
 var express = require('express');
 var server = express();
 var routes = require('./routes/routes');
@@ -32,3 +33,12 @@ server.listen(8000,function check(error)
         console.log("startedddddd")
     }
 });
+
+
+
+
+
+server.get("/Hello", function(request, response) {
+    response.send(functions.sayHello());
+})
+
